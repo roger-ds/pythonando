@@ -1,0 +1,16 @@
+body{
+    background-color: grey;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.container{
+    margin-top: 5px;
+}
+
+form{
+    margin-top: 10px;
+}

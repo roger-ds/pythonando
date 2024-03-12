@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'titulo' %} Meu site {% endblock %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+{% endblock %}
+
+
+{% block 'conteudo' %}
+
+{% if erro == '1' %}
+<div class="container alert alert-danger" role="alert">
+    Erro == 1 - A simple danger alert—check it out!
+  </div>
+{% endif %}
+
+<h1>Olá</h1>
+<h2>{{nome}}</h2>
+<h2>{{email}}</h2>
+
+<img id="rocket" src="{% static 'img/3d_rocket.jpg' %}">
+
+<form method="POST" action="{% url 'cadastro' %}"> {% csrf_token %}
+    <input type="text" placeholder="Nome..." name="nome">
+    <input type="email" placeholder="email..." name="email">
+    <input type="submit">
+</form>
+
+{% endblock %}
